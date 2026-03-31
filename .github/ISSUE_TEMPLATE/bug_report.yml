@@ -1,0 +1,93 @@
+name: Bug Report
+description: Report an issue with one of our plugins
+labels: ["bug", "triage"]
+body:
+  - type: dropdown
+    id: plugin
+    attributes:
+      label: Plugin
+      description: Which plugin is this bug related to?
+      options:
+        - AstralSwords
+        - TrimBlades
+        - Token
+        - FaithBreak
+    validations:
+      required: true
+
+  - type: input
+    id: plugin_version
+    attributes:
+      label: Plugin Version
+      description: Which version of the plugin are you using?
+      placeholder: "e.g. 1.2.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: server_software
+    attributes:
+      label: Server Software
+      description: What server software are you running?
+      options:
+        - Paper
+        - Purpur
+        - Spigot
+        - Folia
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: minecraft_version
+    attributes:
+      label: Minecraft Version
+      description: What version of Minecraft is your server running?
+      placeholder: "e.g. 1.21.1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of the bug.
+      placeholder: "What happened? What did you expect to happen instead?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce the bug?
+      placeholder: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logs or Errors
+      description: Paste any relevant console errors or stack traces here.
+      render: shell
+
+  - type: textarea
+    id: other_plugins
+    attributes:
+      label: Other Plugins
+      description: List any other plugins running on your server that might be relevant.
+      placeholder: "e.g. LuckPerms 5.4, Vault 1.7..."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I am using the latest version of the plugin
+          required: true
+        - label: I have checked that this issue hasn't already been reported
+          required: true
